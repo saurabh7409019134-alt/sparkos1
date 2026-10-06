@@ -1,0 +1,17 @@
+import type { ReactNode } from "react";
+
+type ContainerProps = {
+  children: ReactNode;
+  className?: string;
+};
+
+/**
+ * Standard page container: max-w-7xl, centered, responsive side padding.
+ */
+export default function Container({ children, className = "" }: ContainerProps) {
+  return (
+    <div className={`mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10 ${className}`}>
+      {children}
+    </div>
+  );
+}

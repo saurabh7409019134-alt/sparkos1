@@ -1,0 +1,311 @@
+import { useEffect, useRef, useState } from "react";
+import Container from "../components/Container";
+import Reveal from "../components/Reveal";
+import SectionLabel from "../components/SectionLabel";
+import restaurantAd from "../assets/work-restaurant-ad.jpg";
+import cafePromo from "../assets/work-cafe-promo.jpg";
+import productCampaign from "../assets/work-product-campaign.jpg";
+import videoThumbnail from "../assets/work-video-thumbnail.jpg";
+import socialCreative from "../assets/work-social-creative.jpg";
+import productVideo from "../assets/work-product-video.jpg";
+
+type Project = {
+  id: string;
+  title: string;
+  categories: string[];
+  creativeType: string;
+  description: string;
+  image: string;
+  alt: string;
+};
+
+const filters = [
+  "All",
+  "Restaurants",
+  "Products",
+  "Social Content",
+  "Ads",
+  "Video",
+];
+
+const projects: Project[] = [
+  {
+    id: "signature-dish",
+    title: "Signature Dish Spotlight",
+    categories: ["Restaurants", "Ads"],
+    creativeType: "Restaurant ad concept",
+    description:
+      "Cinematic close-ups of a signature dish, styled and lit for a high-impact restaurant advertisement.",
+    image: restaurantAd,
+    alt: "Cinematic close-up of a gourmet plated dish with blue rim lighting",
+  },
+  {
+    id: "cafe-morning-rush",
+    title: "Café Morning Rush",
+    categories: ["Restaurants", "Social Content"],
+    creativeType: "Café promo creative",
+    description:
+      "A morning-rush story series concept: latte art, warm interiors, and the café experience in motion.",
+    image: cafePromo,
+    alt: "Barista pouring latte art in a dark café with blue accent light",
+  },
+  {
+    id: "product-launch-teaser",
+    title: "Product Launch Teaser",
+    categories: ["Products", "Ads"],
+    creativeType: "Ad creative concept",
+    description:
+      "Studio-lit product visuals built to tease a launch across ads and social placements.",
+    image: productCampaign,
+    alt: "Studio-lit cosmetic serum bottle with blue gradient lighting",
+  },
+  {
+    id: "behind-the-counter",
+    title: "Behind the Counter",
+    categories: ["Video", "Social Content"],
+    creativeType: "Short-form video concept",
+    description:
+      "A day-in-the-life reel concept: dough in motion, shot vertical for Reels and Shorts.",
+    image: videoThumbnail,
+    alt: "Hands stretching pizza dough mid-air in a dark pizzeria kitchen",
+  },
+  {
+    id: "weekend-offer",
+    title: "Weekend Offer Creative",
+    categories: ["Social Content", "Ads"],
+    creativeType: "Social creative concept",
+    description:
+      "A colorful promotional creative concept for a weekend dessert offer, made for feeds and stories.",
+    image: socialCreative,
+    alt: "Overhead flat lay of dessert jars and ingredients on a dark background",
+  },
+  {
+    id: "unboxing-reel",
+    title: "Unboxing Reel",
+    categories: ["Products", "Video"],
+    creativeType: "Short-form video concept",
+    description:
+      "An unboxing-style product video concept with cinematic studio lighting for launch week.",
+    image: productVideo,
+    alt: "Hands opening a black box revealing premium headphones with blue glow",
+  },
+];
+
+function ProjectModal({
+  project,
+  onClose,
+}: {
+  project: Project;
+  onClose: () => void;
+}) {
+  const closeRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    closeRef.current?.focus();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby={`project-title-${project.id}`}
+    >
+      <button
+        aria-label="Close project details"
+        onClick={onClose}
+        className="absolute inset-0 cursor-default bg-black/75 backdrop-blur-sm"
+      />
+      <div className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-white/10 bg-sparkos-ink shadow-2xl">
+        <div className="relative aspect-[16/9] overflow-hidden">
+          <img
+            src={project.image}
+            alt={project.alt}
+            className="h-full w-full object-cover"
+          />
+          <span className="absolute left-4 top-4 rounded-full border border-sparkos-cyan/40 bg-sparkos-ink/70 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-sparkos-cyan backdrop-blur-sm">
+            Sparkos Concept Project
+          </span>
+        </div>
+        <div className="p-6 sm:p-8">
+          <div className="flex flex-wrap gap-2">
+            {project.categories.map((c) => (
+              <span
+                key={c}
+                className="rounded-full bg-white/[0.06] px-3 py-1 text-xs font-medium text-white/60"
+              >
+                {c}
+              </span>
+            ))}
+            <span className="rounded-full bg-white/[0.06] px-3 py-1 text-xs font-medium text-white/60">
+              {project.creativeType}
+            </span>
+          </div>
+          <h3
+            id={`project-title-${project.id}`}
+            className="mt-4 text-2xl font-bold text-white"
+          >
+            {project.title}
+          </h3>
+          <p className="mt-3 leading-relaxed text-white/65">
+            {project.description}
+          </p>
+          <p className="mt-4 text-sm text-white/45">
+            Concept work created by Sparkos to demonstrate creative
+            capabilities — not a real client project.
+          </p>
+        </div>
+        <button
+          ref={closeRef}
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-sparkos-ink/70 text-white backdrop-blur-sm transition-colors hover:border-sparkos-cyan/60 hover:text-sparkos-cyan"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="m3 3 10 10M13 3 3 13"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export default function Portfolio() {
+  const [activeFilter, setActiveFilter] = useState("All");
+  const [selected, setSelected] = useState<Project | null>(null);
+
+  const visible =
+    activeFilter === "All"
+      ? projects
+      : projects.filter((p) => p.categories.includes(activeFilter));
+
+  return (
+    <section
+      id="work"
+      className="relative scroll-mt-24 border-t border-white/[0.06] bg-sparkos-ink py-20 sm:py-28"
+    >
+      <Container>
+        <Reveal className="mx-auto max-w-3xl text-center">
+          <SectionLabel>Featured Work</SectionLabel>
+          <h2 className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+            Work That Speaks for Itself.
+          </h2>
+          <p className="mt-5 text-base leading-relaxed text-white/65 sm:text-lg">
+            Concept projects created by Sparkos to demonstrate what consistent,
+            well-produced creative looks like.
+          </p>
+        </Reveal>
+
+        {/* Filters */}
+        <Reveal delay={100}>
+          <div
+            className="mt-10 flex flex-wrap justify-center gap-2.5"
+            role="group"
+            aria-label="Filter projects by category"
+          >
+            {filters.map((filter) => {
+              const active = filter === activeFilter;
+              return (
+                <button
+                  key={filter}
+                  type="button"
+                  aria-pressed={active}
+                  onClick={() => setActiveFilter(filter)}
+                  className={`rounded-full px-5 py-3 text-sm font-medium transition-all duration-300 ${
+                    active
+                      ? "bg-gradient-to-r from-sparkos-blue to-sparkos-cyan text-white shadow-[0_8px_24px_-8px_rgba(0,58,255,0.8)]"
+                      : "border border-white/15 bg-white/[0.03] text-white/65 hover:border-sparkos-cyan/50 hover:text-white"
+                  }`}
+                >
+                  {filter}
+                </button>
+              );
+            })}
+          </div>
+        </Reveal>
+
+        {/* Grid */}
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {visible.map((project, i) => (
+            <Reveal key={project.id} delay={(i % 3) * 100}>
+              <article
+                className="group h-full cursor-pointer overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] transition-all duration-300 hover:-translate-y-1 hover:border-sparkos-blue/50 hover:shadow-[0_16px_48px_-16px_rgba(0,58,255,0.45)]"
+                onClick={() => setSelected(project)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setSelected(project);
+                  }
+                }}
+                tabIndex={0}
+                role="button"
+                aria-label={`View details for ${project.title}`}
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.alt}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 bg-gradient-to-t from-sparkos-ink/80 via-transparent to-transparent"
+                  />
+                  <span className="absolute left-4 top-4 rounded-full border border-sparkos-cyan/40 bg-sparkos-ink/70 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-sparkos-cyan backdrop-blur-sm">
+                    Sparkos Concept Project
+                  </span>
+                </div>
+                <div className="p-6">
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-sparkos-cyan/80">
+                    {project.creativeType}
+                  </p>
+                  <h3 className="mt-2 text-xl font-semibold text-white">
+                    {project.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-white/60">
+                    {project.description}
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {project.categories.map((c) => (
+                      <span
+                        key={c}
+                        className="rounded-full bg-white/[0.06] px-3 py-1 text-xs font-medium text-white/60"
+                      >
+                        {c}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </Container>
+
+      {selected && (
+        <ProjectModal project={selected} onClose={() => setSelected(null)} />
+      )}
+    </section>
+  );
+}

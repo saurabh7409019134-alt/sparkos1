@@ -1,0 +1,46 @@
+/* ── Hero entrance + ambient motion (front-half only) ────────────────
+   Entrance: subtle fade-up, staggered via inline animation-delay.
+   Under prefers-reduced-motion the global kill-switch in index.css
+   collapses these to ~0ms, so everything lands in its final state. */
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-anim {
+  opacity: 0;
+  animation: hero-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Gentle float for the hero visual cards (a few pixels, slow). */
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.hero-float {
+  animation: hero-float 7s ease-in-out infinite;
+}
+
+/* Slow drift of the light-trail dash pattern. */
+@keyframes trail-flow {
+  to {
+    stroke-dashoffset: -72;
+  }
+}
+
+.trail-flow {
+  animation: trail-flow 9s linear infinite;
+}

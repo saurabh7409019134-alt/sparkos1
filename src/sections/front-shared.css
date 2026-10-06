@@ -1,0 +1,6 @@
+/* Front-half shared helpers (imported once by Navbar).
+   Keeps anchored sections clear of the sticky header when smooth-scrolling. */
+section[id],
+header[id] {
+  scroll-margin-top: 88px;
+}
