@@ -8,6 +8,7 @@ import productCampaign from "../assets/work-product-campaign.jpg";
 import videoThumbnail from "../assets/work-video-thumbnail.jpg";
 import socialCreative from "../assets/work-social-creative.jpg";
 import productVideo from "../assets/work-product-video.jpg";
+import productVideoMp4 from "../assets/work-product-video.mp4";
 
 type Project = {
   id: string;
@@ -17,6 +18,7 @@ type Project = {
   description: string;
   image: string;
   alt: string;
+  video?: string;
 };
 
 const filters = [
@@ -88,6 +90,7 @@ const projects: Project[] = [
       "An unboxing-style product video concept with cinematic studio lighting for launch week.",
     image: productVideo,
     alt: "Hands opening a black box revealing premium headphones with blue glow",
+    video: productVideoMp4,
   },
 ];
 
@@ -99,6 +102,7 @@ function ProjectModal({
   onClose: () => void;
 }) {
   const closeRef = useRef<HTMLButtonElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     closeRef.current?.focus();
@@ -113,6 +117,23 @@ function ProjectModal({
     };
   }, [onClose]);
 
+  // When a video project is opened, play with sound
+  useEffect(() => {
+    if (project.video && videoRef.current) {
+      const vid = videoRef.current;
+      vid.muted = false;
+      vid.volume = 1.0;
+      const playPromise = vid.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Fallback if browser requires muted initial playback
+          vid.muted = true;
+          vid.play().catch(() => {});
+        });
+      }
+    }
+  }, [project.video]);
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
@@ -126,13 +147,34 @@ function ProjectModal({
         className="absolute inset-0 cursor-default bg-black/75 backdrop-blur-sm"
       />
       <div className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-white/10 bg-sparkos-ink shadow-2xl">
-        <div className="relative aspect-[16/9] overflow-hidden">
-          <img
-            src={project.image}
-            alt={project.alt}
-            className="h-full w-full object-cover"
-          />
-          <span className="absolute left-4 top-4 rounded-full border border-sparkos-cyan/40 bg-sparkos-ink/70 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-sparkos-cyan backdrop-blur-sm">
+        <div className="relative aspect-[16/9] bg-black overflow-hidden flex items-center justify-center">
+          {project.video ? (
+            <div className="relative h-full w-full flex items-center justify-center bg-black">
+              {/* Ambient backdrop */}
+              <img
+                src={project.image}
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 h-full w-full object-cover opacity-25 blur-xl scale-110 pointer-events-none"
+              />
+              <video
+                ref={videoRef}
+                src={project.video}
+                poster={project.image}
+                controls
+                autoPlay
+                playsInline
+                className="relative z-10 max-h-full max-w-full h-full object-contain"
+              />
+            </div>
+          ) : (
+            <img
+              src={project.image}
+              alt={project.alt}
+              className="h-full w-full object-cover"
+            />
+          )}
+          <span className="absolute left-4 top-4 z-20 rounded-full border border-sparkos-cyan/40 bg-sparkos-ink/70 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-sparkos-cyan backdrop-blur-sm">
             Sparkos Concept Project
           </span>
         </div>
@@ -272,9 +314,26 @@ export default function Portfolio() {
                     aria-hidden="true"
                     className="absolute inset-0 bg-gradient-to-t from-sparkos-ink/80 via-transparent to-transparent"
                   />
+                  {project.video && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/25 transition-colors group-hover:bg-black/10">
+                      <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/30 bg-sparkos-ink/85 text-sparkos-cyan shadow-[0_0_24px_rgba(0,229,255,0.45)] backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:border-sparkos-cyan/70 group-hover:bg-sparkos-blue/30">
+                        <svg className="ml-0.5 h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </span>
+                    </div>
+                  )}
                   <span className="absolute left-4 top-4 rounded-full border border-sparkos-cyan/40 bg-sparkos-ink/70 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-sparkos-cyan backdrop-blur-sm">
                     Sparkos Concept Project
                   </span>
+                  {project.video && (
+                    <span className="absolute bottom-3 right-3 flex items-center gap-1.5 rounded-full border border-sparkos-cyan/30 bg-sparkos-ink/85 px-2.5 py-1 text-[10px] font-medium text-sparkos-cyan backdrop-blur-sm">
+                      <svg className="h-2.5 w-2.5" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                      Watch Video
+                    </span>
+                  )}
                 </div>
                 <div className="p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-sparkos-cyan/80">
