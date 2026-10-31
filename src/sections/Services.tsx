@@ -3,6 +3,7 @@ import Container from "../components/Container";
 import SectionLabel from "../components/SectionLabel";
 import Reveal from "../components/Reveal";
 import MaskedRevealText from "../components/MaskedRevealText";
+import ScrollHighlightText from "../components/ScrollHighlightText";
 import heroFood from "../assets/hero-food.jpg";
 import heroProduct from "../assets/hero-product.jpg";
 import heroReel from "../assets/hero-reel.jpg";
@@ -171,10 +172,10 @@ export default function Services() {
           <h2 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl lg:text-[44px] lg:leading-[1.15]">
             <MaskedRevealText text="Everything You Need to Grow With AI." highlightWords={["AI."]} />
           </h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">
-            From high-impact content creation to intelligent web experiences and video production, Sparkos helps
-            businesses build a commanding digital presence.
-          </p>
+          <ScrollHighlightText
+            text="From high-impact content creation to intelligent web experiences and video production, Sparkos helps businesses build a commanding digital presence."
+            className="mt-4 max-w-2xl text-base leading-relaxed sm:text-lg"
+          />
         </Reveal>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">

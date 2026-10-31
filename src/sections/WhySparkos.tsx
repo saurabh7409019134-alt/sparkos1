@@ -2,6 +2,7 @@ import type { ReactElement } from "react";
 import Container from "../components/Container";
 import Reveal from "../components/Reveal";
 import MaskedRevealText from "../components/MaskedRevealText";
+import ScrollHighlightText from "../components/ScrollHighlightText";
 
 type Benefit = {
   title: string;
@@ -129,10 +130,10 @@ export default function WhySparkos() {
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
             <MaskedRevealText text="More Than Content. A Growth System." highlightWords={["Growth"]} />
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-white/65 sm:text-lg">
-            The way Sparkos works — combining modern tools, human judgment,
-            and organized delivery.
-          </p>
+          <ScrollHighlightText
+            text="The way Sparkos works — combining modern tools, human judgment, and organized delivery."
+            className="mt-5 text-base leading-relaxed sm:text-lg"
+          />
         </Reveal>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

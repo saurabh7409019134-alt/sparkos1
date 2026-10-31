@@ -1,7 +1,7 @@
 import Container from "../components/Container";
 import Button from "../components/Button";
 import SectionLabel from "../components/SectionLabel";
-import MaskedRevealText from "../components/MaskedRevealText";
+import ScrollHighlightText from "../components/ScrollHighlightText";
 import heroFood from "../assets/hero-food.jpg";
 import heroProduct from "../assets/hero-product.jpg";
 import heroReel from "../assets/hero-reel.jpg";
@@ -57,13 +57,12 @@ export default function Hero() {
               </span>
             </h1>
 
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/65 sm:text-xl">
-              <MaskedRevealText
-                text="AI-powered content, social media growth, websites, and digital solutions for modern businesses."
-                delay={320}
-                stagger={30}
-              />
-            </p>
+            <ScrollHighlightText
+              text="AI-powered content, social media growth, websites, and digital solutions for modern businesses."
+              className="mt-6 max-w-xl text-lg leading-relaxed sm:text-xl"
+              startOffset={0.95}
+              endOffset={0.65}
+            />
 
             <div
               className="hero-anim mt-9 flex flex-col gap-3.5 sm:flex-row sm:items-center"

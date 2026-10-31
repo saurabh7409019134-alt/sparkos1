@@ -3,6 +3,7 @@ import Container from "../components/Container";
 import Reveal from "../components/Reveal";
 import Button from "../components/Button";
 import MaskedRevealText from "../components/MaskedRevealText";
+import ScrollHighlightText from "../components/ScrollHighlightText";
 
 const serviceOptions = [
   "AI Content & Growth",
@@ -119,10 +120,10 @@ export default function Contact() {
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
             <MaskedRevealText text="Ready to Turn Attention Into Growth?" highlightWords={["Growth?"]} />
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-white/65 sm:text-lg">
-            Tell us about your business and goals. We&apos;ll help you
-            identify the right Sparkos service for your needs.
-          </p>
+          <ScrollHighlightText
+            text="Tell us about your business and goals. We'll help you identify the right Sparkos service for your needs."
+            className="mt-5 text-base leading-relaxed sm:text-lg"
+          />
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button href="#contact-form">Start a Project</Button>
             <Button href="#work" variant="secondary">

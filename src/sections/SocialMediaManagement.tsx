@@ -3,6 +3,7 @@ import SectionLabel from "../components/SectionLabel";
 import Reveal from "../components/Reveal";
 import Button from "../components/Button";
 import MaskedRevealText from "../components/MaskedRevealText";
+import ScrollHighlightText from "../components/ScrollHighlightText";
 import cafePromo from "../assets/work-cafe-promo.jpg";
 import socialCreative from "../assets/work-social-creative.jpg";
 
@@ -80,11 +81,10 @@ export default function SocialMediaManagement() {
               highlightWords={["Attention."]}
             />
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-white/65 sm:text-lg">
-            We don't just post content — we plan, produce, schedule, and optimize
-            your complete brand presence so you stay consistently top-of-mind without
-            lifting a finger.
-          </p>
+          <ScrollHighlightText
+            text="We don't just post content — we plan, produce, schedule, and optimize your complete brand presence so you stay consistently top-of-mind without lifting a finger."
+            className="mt-5 text-base leading-relaxed sm:text-lg"
+          />
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
             <span className="text-xs uppercase tracking-wider text-white/40">Platforms:</span>

@@ -2,6 +2,7 @@ import Container from "../components/Container";
 import Reveal from "../components/Reveal";
 import SectionLabel from "../components/SectionLabel";
 import MaskedRevealText from "../components/MaskedRevealText";
+import ScrollHighlightText from "../components/ScrollHighlightText";
 import restaurantAd from "../assets/work-restaurant-ad.jpg";
 import cafePromo from "../assets/work-cafe-promo.jpg";
 import productCampaign from "../assets/work-product-campaign.jpg";
@@ -95,11 +96,10 @@ export default function FeaturedService() {
           <h2 className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
             <MaskedRevealText text="Your Brand Deserves More Than Random Posts." highlightWords={["Posts."]} />
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-white/65 sm:text-lg">
-            Sparkos helps businesses plan, create, and manage consistent social
-            media content with a clear production process and a focus on
-            improving over time.
-          </p>
+          <ScrollHighlightText
+            text="Sparkos helps businesses plan, create, and manage consistent social media content with a clear production process and a focus on improving over time."
+            className="mt-5 text-base leading-relaxed sm:text-lg"
+          />
         </Reveal>
 
         {/* Visual workflow */}

@@ -3,6 +3,7 @@ import Container from "../components/Container";
 import Reveal from "../components/Reveal";
 import SectionLabel from "../components/SectionLabel";
 import MaskedRevealText from "../components/MaskedRevealText";
+import ScrollHighlightText from "../components/ScrollHighlightText";
 import restaurantAd from "../assets/work-restaurant-ad.jpg";
 import cafePromo from "../assets/work-cafe-promo.jpg";
 import productCampaign from "../assets/work-product-campaign.jpg";
@@ -253,10 +254,10 @@ export default function Portfolio() {
           <h2 className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
             <MaskedRevealText text="Work That Speaks for Itself." highlightWords={["Speaks"]} />
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-white/65 sm:text-lg">
-            Concept projects created by Sparkos to demonstrate what consistent,
-            well-produced creative looks like.
-          </p>
+          <ScrollHighlightText
+            text="Concept projects created by Sparkos to demonstrate what consistent, well-produced creative looks like."
+            className="mt-5 text-base leading-relaxed sm:text-lg"
+          />
         </Reveal>
 
         {/* Filters */}

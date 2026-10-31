@@ -3,6 +3,7 @@ import Reveal from "../components/Reveal";
 import SectionLabel from "../components/SectionLabel";
 import Button from "../components/Button";
 import MaskedRevealText from "../components/MaskedRevealText";
+import ScrollHighlightText from "../components/ScrollHighlightText";
 
 type Plan = {
   name: string;
@@ -124,10 +125,10 @@ export default function Pricing() {
           <h2 className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
             <MaskedRevealText text="Choose Your Growth Level." highlightWords={["Growth"]} />
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-white/65 sm:text-lg">
-            Start with the right scope for your business and expand when
-            you&apos;re ready.
-          </p>
+          <ScrollHighlightText
+            text="Start with the right scope for your business and expand when you're ready."
+            className="mt-5 text-base leading-relaxed sm:text-lg"
+          />
         </Reveal>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4 xl:items-stretch">
