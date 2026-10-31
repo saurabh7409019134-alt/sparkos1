@@ -23,6 +23,8 @@ export default function Logo({ className = "", height = 36, withTagline = false 
         <img
           src="/logo.png"
           alt="Sparkos"
+          width={height}
+          height={height}
           style={{ height: `${height}px`, width: "auto" }}
           className="block object-contain transition-transform duration-200 group-hover:scale-105"
         />

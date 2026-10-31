@@ -26,3 +26,7 @@ dist-ssr
 # Preview build outputs
 dist-single
 sparkos-preview.html
+
+# Local personal files
+BCAI*
+
