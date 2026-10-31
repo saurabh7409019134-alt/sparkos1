@@ -2,6 +2,7 @@ import Container from "../components/Container";
 import SectionLabel from "../components/SectionLabel";
 import Reveal from "../components/Reveal";
 import Button from "../components/Button";
+import MaskedRevealText from "../components/MaskedRevealText";
 import cafePromo from "../assets/work-cafe-promo.jpg";
 import socialCreative from "../assets/work-social-creative.jpg";
 
@@ -74,7 +75,10 @@ export default function SocialMediaManagement() {
         <Reveal className="mx-auto max-w-3xl text-center">
           <SectionLabel>Full-Funnel Management</SectionLabel>
           <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Done-for-You Social Media Management That Drives Real Attention.
+            <MaskedRevealText
+              text="Done-for-You Social Media Management That Drives Real Attention."
+              highlightWords={["Attention."]}
+            />
           </h2>
           <p className="mt-5 text-base leading-relaxed text-white/65 sm:text-lg">
             We don't just post content — we plan, produce, schedule, and optimize

@@ -1,6 +1,8 @@
 import Container from "../components/Container";
 import Button from "../components/Button";
 import SectionLabel from "../components/SectionLabel";
+import ScrambleText from "../components/ScrambleText";
+import MaskedRevealText from "../components/MaskedRevealText";
 import heroFood from "../assets/hero-food.jpg";
 import heroProduct from "../assets/hero-product.jpg";
 import heroReel from "../assets/hero-reel.jpg";
@@ -46,22 +48,22 @@ export default function Hero() {
               <SectionLabel>AI-Powered Creative &amp; Growth Agency</SectionLabel>
             </div>
 
-            <h1
-              className="hero-anim mt-6 text-[42px] font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-[68px]"
-              style={{ animationDelay: "120ms" }}
-            >
-              Turn Attention Into{" "}
-              <span className="bg-gradient-to-r from-sparkos-blue to-sparkos-cyan bg-clip-text text-transparent">
-                Growth.
-              </span>
+            <h1 className="mt-6 text-[42px] font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-[68px]">
+              <ScrambleText text="Turn Attention Into " delay={120} revealDurationMs={500} />
+              <ScrambleText
+                text="Growth."
+                delay={380}
+                revealDurationMs={450}
+                className="bg-gradient-to-r from-sparkos-blue via-sparkos-cyan to-sky-300 bg-clip-text text-transparent animate-gradient-flow"
+              />
             </h1>
 
-            <p
-              className="hero-anim mt-6 max-w-xl text-lg leading-relaxed text-white/65 sm:text-xl"
-              style={{ animationDelay: "240ms" }}
-            >
-              AI-powered content, social media growth, websites, and digital
-              solutions for modern businesses.
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/65 sm:text-xl">
+              <MaskedRevealText
+                text="AI-powered content, social media growth, websites, and digital solutions for modern businesses."
+                delay={320}
+                stagger={30}
+              />
             </p>
 
             <div

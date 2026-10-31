@@ -1,6 +1,7 @@
 import type { ReactElement } from "react";
 import Container from "../components/Container";
 import Reveal from "../components/Reveal";
+import MaskedRevealText from "../components/MaskedRevealText";
 
 type Benefit = {
   title: string;
@@ -126,7 +127,7 @@ export default function WhySparkos() {
       <Container>
         <Reveal className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            More Than Content. A Growth System.
+            <MaskedRevealText text="More Than Content. A Growth System." highlightWords={["Growth"]} />
           </h2>
           <p className="mt-5 text-base leading-relaxed text-white/65 sm:text-lg">
             The way Sparkos works — combining modern tools, human judgment,

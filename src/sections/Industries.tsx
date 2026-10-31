@@ -2,6 +2,7 @@ import Container from "../components/Container";
 import SectionLabel from "../components/SectionLabel";
 import Reveal from "../components/Reveal";
 import Button from "../components/Button";
+import MaskedRevealText from "../components/MaskedRevealText";
 import industryFood from "../assets/industry-food.jpg";
 import industryProduct from "../assets/industry-product.jpg";
 
@@ -54,7 +55,7 @@ export default function Industries() {
         <Reveal className="max-w-3xl">
           <SectionLabel>Built for Modern Businesses</SectionLabel>
           <h2 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl lg:text-[44px] lg:leading-[1.15]">
-            Content That Fits Your Business.
+            <MaskedRevealText text="Content That Fits Your Business." highlightWords={["Business."]} />
           </h2>
         </Reveal>
 

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Container from "../components/Container";
 import Reveal from "../components/Reveal";
 import SectionLabel from "../components/SectionLabel";
+import MaskedRevealText from "../components/MaskedRevealText";
 import restaurantAd from "../assets/work-restaurant-ad.jpg";
 import cafePromo from "../assets/work-cafe-promo.jpg";
 import productCampaign from "../assets/work-product-campaign.jpg";
@@ -250,7 +251,7 @@ export default function Portfolio() {
         <Reveal className="mx-auto max-w-3xl text-center">
           <SectionLabel>Featured Work</SectionLabel>
           <h2 className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Work That Speaks for Itself.
+            <MaskedRevealText text="Work That Speaks for Itself." highlightWords={["Speaks"]} />
           </h2>
           <p className="mt-5 text-base leading-relaxed text-white/65 sm:text-lg">
             Concept projects created by Sparkos to demonstrate what consistent,

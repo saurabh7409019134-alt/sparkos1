@@ -2,6 +2,7 @@ import { useState, type FormEvent } from "react";
 import Container from "../components/Container";
 import Reveal from "../components/Reveal";
 import Button from "../components/Button";
+import MaskedRevealText from "../components/MaskedRevealText";
 
 const serviceOptions = [
   "AI Content & Growth",
@@ -116,7 +117,7 @@ export default function Contact() {
       <Container className="relative">
         <Reveal className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Ready to Turn Attention Into Growth?
+            <MaskedRevealText text="Ready to Turn Attention Into Growth?" highlightWords={["Growth?"]} />
           </h2>
           <p className="mt-5 text-base leading-relaxed text-white/65 sm:text-lg">
             Tell us about your business and goals. We&apos;ll help you

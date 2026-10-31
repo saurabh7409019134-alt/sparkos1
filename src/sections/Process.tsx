@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type ReactElement } from "react";
 import Container from "../components/Container";
 import Reveal from "../components/Reveal";
 import SectionLabel from "../components/SectionLabel";
+import MaskedRevealText from "../components/MaskedRevealText";
 
 type Step = {
   title: string;
@@ -175,7 +176,7 @@ export default function Process() {
         <Reveal className="mx-auto max-w-3xl text-center">
           <SectionLabel>Our Process</SectionLabel>
           <h2 className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            From Idea to Execution.
+            <MaskedRevealText text="From Idea to Execution." highlightWords={["Execution."]} />
           </h2>
         </Reveal>
 

@@ -2,6 +2,7 @@ import Container from "../components/Container";
 import Reveal from "../components/Reveal";
 import SectionLabel from "../components/SectionLabel";
 import Button from "../components/Button";
+import MaskedRevealText from "../components/MaskedRevealText";
 
 type Plan = {
   name: string;
@@ -121,7 +122,7 @@ export default function Pricing() {
         <Reveal className="mx-auto max-w-3xl text-center">
           <SectionLabel>Pricing</SectionLabel>
           <h2 className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Choose Your Growth Level.
+            <MaskedRevealText text="Choose Your Growth Level." highlightWords={["Growth"]} />
           </h2>
           <p className="mt-5 text-base leading-relaxed text-white/65 sm:text-lg">
             Start with the right scope for your business and expand when
