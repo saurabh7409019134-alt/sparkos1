@@ -100,7 +100,7 @@ const benefits: Benefit[] = [
   {
     title: "Multiple Capabilities",
     description:
-      "Access content, automation, websites, AI agents, and video services through one agency.",
+      "Access content, social media management, websites, AI agents, and video services through one agency.",
     icon: (
       <svg {...iconProps}>
         <path
@@ -164,7 +164,7 @@ export default function WhySparkos() {
                 </span>
               </p>
               <p className="mt-2 text-sm leading-relaxed text-white/55">
-                Start with content, add automation, websites, or video when
+                Start with content, add websites, social growth, or video when
                 you&apos;re ready.
               </p>
             </div>

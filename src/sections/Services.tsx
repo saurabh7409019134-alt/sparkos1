@@ -2,7 +2,6 @@ import type { ReactElement } from "react";
 import Container from "../components/Container";
 import SectionLabel from "../components/SectionLabel";
 import Reveal from "../components/Reveal";
-import WorkflowLoop from "./WorkflowLoop";
 import heroFood from "../assets/hero-food.jpg";
 import heroProduct from "../assets/hero-product.jpg";
 import heroReel from "../assets/hero-reel.jpg";
@@ -12,14 +11,6 @@ function ContentIcon() {
     <svg aria-hidden="true" width="22" height="22" viewBox="0 0 22 22" fill="none">
       <rect x="2.5" y="4.5" width="17" height="13" rx="2.5" stroke="currentColor" strokeWidth="1.6" />
       <path d="M9.5 8.8v4.4l3.8-2.2-3.8-2.2Z" fill="currentColor" />
-    </svg>
-  );
-}
-
-function AutomationIcon() {
-  return (
-    <svg aria-hidden="true" width="22" height="22" viewBox="0 0 22 22" fill="none">
-      <path d="M12 2.5 5 12.5h4.5L8.5 19.5l7.5-10.5h-4.5L12 2.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -87,7 +78,6 @@ type Service = {
   cta: { label: string; href: string };
   icon: () => ReactElement;
   featured?: boolean;
-  showWorkflow?: boolean;
 };
 
 const SERVICES: Service[] = [
@@ -112,23 +102,6 @@ const SERVICES: Service[] = [
   },
   {
     num: "02",
-    title: "AI Automation",
-    description:
-      "Reduce repetitive work with intelligent workflows that help businesses operate more efficiently.",
-    capabilities: [
-      "Lead management",
-      "Customer inquiry handling",
-      "Follow-up automation",
-      "CRM updates",
-      "Appointment workflows",
-      "Business reporting",
-    ],
-    cta: { label: "Explore Automation", href: "#contact" },
-    icon: AutomationIcon,
-    showWorkflow: true,
-  },
-  {
-    num: "03",
     title: "AI Websites & AI Agents",
     description:
       "Build modern websites and intelligent customer experiences that help businesses capture inquiries and handle routine questions.",
@@ -144,7 +117,7 @@ const SERVICES: Service[] = [
     icon: WebIcon,
   },
   {
-    num: "04",
+    num: "03",
     title: "Video Editing",
     description:
       "Transform raw footage and creative ideas into polished content for social media and advertising.",
@@ -198,15 +171,14 @@ export default function Services() {
             Everything You Need to Grow With AI.
           </h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">
-            From content creation to intelligent automation, Sparkos helps
-            businesses build a stronger digital presence and more efficient
-            workflows.
+            From high-impact content creation to intelligent web experiences and video production, Sparkos helps
+            businesses build a commanding digital presence.
           </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 lg:grid-cols-2">
           {/* ── 01 · Featured: AI Content & Growth ── */}
-          <Reveal className="lg:col-span-3" delay={80}>
+          <Reveal className="lg:col-span-2" delay={80}>
             <article
               className={`${cardBase} relative overflow-hidden border-sparkos-cyan/25 bg-gradient-to-br from-sparkos-blue/[0.08] via-white/[0.02] to-transparent ` +
                 `shadow-[0_0_50px_-12px_rgba(0,58,255,0.35)] ` +
@@ -280,14 +252,6 @@ export default function Services() {
                   <p className="mt-3 text-[15px] leading-relaxed text-white/60">
                     {service.description}
                   </p>
-                  {service.showWorkflow && (
-                    <div className="mt-5 rounded-2xl border border-white/10 bg-sparkos-ink/80 p-4 overflow-hidden">
-                      <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.12em] text-white/40">
-                        Workflow in motion
-                      </p>
-                      <WorkflowLoop />
-                    </div>
-                  )}
                   <div className="mt-5">
                     <CapabilityList items={service.capabilities} />
                   </div>

@@ -1,7 +1,6 @@
 import Container from "../components/Container";
 import Button from "../components/Button";
 import SectionLabel from "../components/SectionLabel";
-import WorkflowLoop from "./WorkflowLoop";
 import heroFood from "../assets/hero-food.jpg";
 import heroProduct from "../assets/hero-product.jpg";
 import heroReel from "../assets/hero-reel.jpg";
@@ -61,8 +60,8 @@ export default function Hero() {
               className="hero-anim mt-6 max-w-xl text-lg leading-relaxed text-white/65 sm:text-xl"
               style={{ animationDelay: "240ms" }}
             >
-              AI-powered content, automation, websites, and digital solutions
-              for modern businesses.
+              AI-powered content, social media growth, websites, and digital
+              solutions for modern businesses.
             </p>
 
             <div
@@ -187,25 +186,6 @@ export default function Hero() {
                 Reel preview
               </figcaption>
             </figure>
-
-            {/* AI automation workflow card */}
-            <div
-              className="hero-float absolute bottom-[3%] right-[3%] w-[58%] sm:w-[54%] max-w-[280px] overflow-hidden rounded-2xl border border-sparkos-cyan/20 bg-sparkos-ink/95 p-3.5 shadow-[0_24px_60px_-16px_rgba(0,58,255,0.35)] backdrop-blur-sm"
-              style={{ animationDelay: "-2.2s" }}
-            >
-              <div className="flex items-center justify-between mb-1">
-                <p className="text-[12px] font-semibold text-white">
-                  AI Automation
-                </p>
-                <span className="rounded-full bg-sparkos-cyan/15 px-1.5 py-0.5 text-[9px] font-medium text-sparkos-cyan">
-                  Active
-                </span>
-              </div>
-              <p className="mb-2.5 text-[10px] text-white/45">
-                Lead workflow · live
-              </p>
-              <WorkflowLoop />
-            </div>
           </div>
         </div>
       </Container>

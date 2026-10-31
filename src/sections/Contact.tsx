@@ -5,7 +5,7 @@ import Button from "../components/Button";
 
 const serviceOptions = [
   "AI Content & Growth",
-  "AI Automation",
+  "Social Media Management",
   "AI Websites & AI Agents",
   "Video Editing",
   "Multiple Services",

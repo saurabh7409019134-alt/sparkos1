@@ -15,7 +15,6 @@ const navLinks = [
 const serviceLinks = [
   { label: "AI Content & Growth", href: "#services" },
   { label: "Social Media Management", href: "#social-media" },
-  { label: "AI Automation", href: "#services" },
   { label: "AI Websites & AI Agents", href: "#services" },
   { label: "Video Editing", href: "#services" },
 ];
@@ -39,8 +38,8 @@ export default function Footer() {
           <div>
             <Logo withTagline height={38} />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/55">
-              AI-powered content, automation, websites, and digital solutions
-              for modern businesses.
+              AI-powered content, social growth, modern websites, and digital
+              creative for businesses.
             </p>
           </div>
 
