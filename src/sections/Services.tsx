@@ -26,12 +26,28 @@ function WebIcon() {
   );
 }
 
-function VideoIcon() {
+function InfluencerIcon() {
   return (
     <svg aria-hidden="true" width="22" height="22" viewBox="0 0 22 22" fill="none">
-      <rect x="2.5" y="7" width="12" height="11" rx="2" stroke="currentColor" strokeWidth="1.6" />
-      <path d="M14.5 10.5l5-2.8v6.6l-5-2.8" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
-      <path d="M3.5 4.5l2-1.5M8 4.5l1.5-2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <circle cx="9" cy="7.5" r="3.2" stroke="currentColor" strokeWidth="1.6" />
+      <path
+        d="M3 18c0-2.8 2.7-4.5 6-4.5s6 1.7 6 4.5"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+      <path
+        d="M17.5 4v4M15.5 6h4"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M18 12.5l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6.6-1.4Z"
+        stroke="currentColor"
+        strokeWidth="1.3"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
@@ -120,19 +136,19 @@ const SERVICES: Service[] = [
   },
   {
     num: "03",
-    title: "Video Editing",
+    title: "Influencer Marketing",
     description:
-      "Transform raw footage and creative ideas into polished content for social media and advertising.",
+      "Partner with vetted creators to build authentic trust, amplify brand reach, and drive real customer conversions.",
     capabilities: [
-      "Instagram Reels",
-      "YouTube Shorts",
-      "Product videos",
-      "Social media ads",
-      "Promotional videos",
-      "Motion graphics",
+      "Creator discovery & audience vetting",
+      "Campaign strategy & creative briefs",
+      "Product seeding & gifting campaigns",
+      "Talent negotiation & contracts",
+      "UGC & whitelisted partnership ads",
+      "Performance, attribution & ROI reporting",
     ],
-    cta: { label: "Explore Video Editing", href: "#contact" },
-    icon: VideoIcon,
+    cta: { label: "Explore Influencer Marketing", href: "#contact" },
+    icon: InfluencerIcon,
   },
 ];
 
@@ -173,7 +189,7 @@ export default function Services() {
             <MaskedRevealText text="Everything You Need to Grow With AI." highlightWords={["AI."]} />
           </h2>
           <ScrollHighlightText
-            text="From high-impact content creation to intelligent web experiences and video production, Sparkos helps businesses build a commanding digital presence."
+            text="From high-impact content creation to intelligent web experiences and influencer marketing, Sparkos helps businesses build a commanding digital presence."
             className="mt-4 max-w-2xl text-base leading-relaxed sm:text-lg"
           />
         </Reveal>

@@ -32,7 +32,7 @@ const PILLARS = [
     ),
     title: "Reels & Creative Production",
     description:
-      "Short-form video editing, stylized carousels, and stories crafted to stop the scroll and capture attention.",
+      "High-impact reels, stylized carousels, and stories crafted to stop the scroll and capture attention.",
     tags: ["Instagram Reels", "YouTube Shorts", "Stories & Carousels"],
   },
   {

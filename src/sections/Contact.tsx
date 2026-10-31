@@ -9,7 +9,7 @@ const serviceOptions = [
   "AI Content & Growth",
   "Social Media Management",
   "AI Websites & AI Agents",
-  "Video Editing",
+  "Influencer Marketing",
   "Multiple Services",
 ];
 

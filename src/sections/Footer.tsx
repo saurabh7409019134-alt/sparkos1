@@ -16,7 +16,7 @@ const serviceLinks = [
   { label: "AI Content & Growth", href: "#services" },
   { label: "Social Media Management", href: "#social-media" },
   { label: "AI Websites & AI Agents", href: "#services" },
-  { label: "Video Editing", href: "#services" },
+  { label: "Influencer Marketing", href: "#services" },
 ];
 
 const socialLinks = [

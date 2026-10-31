@@ -77,6 +77,7 @@ const plans: Plan[] = [
     deliverables: [
       "Custom content volume",
       "Custom ad production",
+      "Influencer campaigns & seeding",
       "Product shoots",
       "UGC-style videos",
       "AI product photography",

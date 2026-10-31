@@ -59,6 +59,11 @@ const faqs: FaqItem[] = [
     answer:
       "Yes. Beyond content, Sparkos builds landing pages and business websites, plus AI chatbots and agents that capture inquiries, qualify leads, and handle routine customer questions.",
   },
+  {
+    question: "Do you offer influencer marketing and creator collaborations?",
+    answer:
+      "Yes. Sparkos manages creator discovery, campaign strategy, product seeding, contract negotiation, and ROI tracking to connect your brand with high-impact creators that drive real awareness and conversions.",
+  },
 ];
 
 export default function Faq() {
