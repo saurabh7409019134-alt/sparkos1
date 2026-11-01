@@ -11,6 +11,7 @@ import productCampaign from "../assets/work-product-campaign.jpg";
 import productCampaignMp4 from "../assets/work-product-campaign.mp4";
 import videoThumbnail from "../assets/work-video-thumbnail.jpg";
 import socialCreative from "../assets/work-social-creative.jpg";
+import socialCreativeMp4 from "../assets/work-social-creative.mp4";
 import productVideo from "../assets/work-product-video.jpg";
 import productVideoMp4 from "../assets/work-product-video.mp4";
 
@@ -86,6 +87,7 @@ const projects: Project[] = [
       "A colorful promotional creative for a weekend dessert offer, made for feeds and stories.",
     image: socialCreative,
     alt: "Overhead flat lay of dessert jars and ingredients on a dark background",
+    video: socialCreativeMp4,
   },
   {
     id: "unboxing-reel",
