@@ -6,7 +6,9 @@ import MaskedRevealText from "../components/MaskedRevealText";
 import ScrollHighlightText from "../components/ScrollHighlightText";
 import restaurantAd from "../assets/work-restaurant-ad.jpg";
 import cafePromo from "../assets/work-cafe-promo.jpg";
+import cafePromoMp4 from "../assets/work-cafe-promo.mp4";
 import productCampaign from "../assets/work-product-campaign.jpg";
+import productCampaignMp4 from "../assets/work-product-campaign.mp4";
 import videoThumbnail from "../assets/work-video-thumbnail.jpg";
 import socialCreative from "../assets/work-social-creative.jpg";
 import productVideo from "../assets/work-product-video.jpg";
@@ -37,7 +39,7 @@ const projects: Project[] = [
     id: "signature-dish",
     title: "Signature Dish Spotlight",
     categories: ["Restaurants", "Ads"],
-    creativeType: "Restaurant ad concept",
+    creativeType: "Restaurant ad",
     description:
       "Cinematic close-ups of a signature dish, styled and lit for a high-impact restaurant advertisement.",
     image: restaurantAd,
@@ -49,27 +51,29 @@ const projects: Project[] = [
     categories: ["Restaurants", "Social Content"],
     creativeType: "Café promo creative",
     description:
-      "A morning-rush story series concept: latte art, warm interiors, and the café experience in motion.",
+      "A morning-rush story series: latte art, warm interiors, and the café experience in motion.",
     image: cafePromo,
     alt: "Barista pouring latte art in a dark café with blue accent light",
+    video: cafePromoMp4,
   },
   {
     id: "product-launch-teaser",
     title: "Product Launch Teaser",
     categories: ["Products", "Ads"],
-    creativeType: "Ad creative concept",
+    creativeType: "Ad creative",
     description:
       "Studio-lit product visuals built to tease a launch across ads and social placements.",
     image: productCampaign,
     alt: "Studio-lit cosmetic serum bottle with blue gradient lighting",
+    video: productCampaignMp4,
   },
   {
     id: "behind-the-counter",
     title: "Behind the Counter",
     categories: ["Video", "Social Content"],
-    creativeType: "Short-form video concept",
+    creativeType: "Short-form video",
     description:
-      "A day-in-the-life reel concept: dough in motion, shot vertical for Reels and Shorts.",
+      "A day-in-the-life reel: dough in motion, shot vertical for Reels and Shorts.",
     image: videoThumbnail,
     alt: "Hands stretching pizza dough mid-air in a dark pizzeria kitchen",
   },
@@ -77,9 +81,9 @@ const projects: Project[] = [
     id: "weekend-offer",
     title: "Weekend Offer Creative",
     categories: ["Social Content", "Ads"],
-    creativeType: "Social creative concept",
+    creativeType: "Social creative",
     description:
-      "A colorful promotional creative concept for a weekend dessert offer, made for feeds and stories.",
+      "A colorful promotional creative for a weekend dessert offer, made for feeds and stories.",
     image: socialCreative,
     alt: "Overhead flat lay of dessert jars and ingredients on a dark background",
   },
@@ -87,9 +91,9 @@ const projects: Project[] = [
     id: "unboxing-reel",
     title: "Unboxing Reel",
     categories: ["Products", "Video"],
-    creativeType: "Short-form video concept",
+    creativeType: "Short-form video",
     description:
-      "An unboxing-style product video concept with cinematic studio lighting for launch week.",
+      "An unboxing-style product video with cinematic studio lighting for launch week.",
     image: productVideo,
     alt: "Hands opening a black box revealing premium headphones with blue glow",
     video: productVideoMp4,
@@ -177,7 +181,7 @@ function ProjectModal({
             />
           )}
           <span className="absolute left-4 top-4 z-20 rounded-full border border-sparkos-cyan/40 bg-sparkos-ink/70 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-sparkos-cyan backdrop-blur-sm">
-            Sparkos Concept Project
+            Sparkos Project
           </span>
         </div>
         <div className="p-6 sm:p-8">
@@ -202,10 +206,6 @@ function ProjectModal({
           </h3>
           <p className="mt-3 leading-relaxed text-white/65">
             {project.description}
-          </p>
-          <p className="mt-4 text-sm text-white/45">
-            Concept work created by Sparkos to demonstrate creative
-            capabilities — not a real client project.
           </p>
         </div>
         <button
@@ -255,7 +255,7 @@ export default function Portfolio() {
             <MaskedRevealText text="Work That Speaks for Itself." highlightWords={["Speaks"]} />
           </h2>
           <ScrollHighlightText
-            text="Concept projects created by Sparkos to demonstrate what consistent, well-produced creative looks like."
+            text="Projects created by Sparkos to demonstrate what consistent, well-produced creative looks like."
             className="mt-5 text-base leading-relaxed sm:text-lg"
           />
         </Reveal>
@@ -326,7 +326,7 @@ export default function Portfolio() {
                     </div>
                   )}
                   <span className="absolute left-4 top-4 rounded-full border border-sparkos-cyan/40 bg-sparkos-ink/70 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-sparkos-cyan backdrop-blur-sm">
-                    Sparkos Concept Project
+                    Sparkos Project
                   </span>
                   {project.video && (
                     <span className="absolute bottom-3 right-3 flex items-center gap-1.5 rounded-full border border-sparkos-cyan/30 bg-sparkos-ink/85 px-2.5 py-1 text-[10px] font-medium text-sparkos-cyan backdrop-blur-sm">

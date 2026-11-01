@@ -143,9 +143,6 @@ export default function Hero() {
               />
               <figcaption className="flex items-center justify-between px-3.5 py-2.5 text-[11px] font-medium">
                 <span className="text-white/80">Restaurant ad</span>
-                <span className="rounded-full border border-sparkos-cyan/30 bg-sparkos-cyan/10 px-2 py-0.5 text-[10px] uppercase tracking-wider text-sparkos-cyan">
-                  Concept
-                </span>
               </figcaption>
             </figure>
 
@@ -156,14 +153,11 @@ export default function Hero() {
             >
               <img
                 src={heroProduct}
-                alt="Premium product advertisement concept: black perfume bottle with blue and cyan studio lighting"
+                alt="Premium product advertisement: black perfume bottle with blue and cyan studio lighting"
                 className="aspect-[4/3] w-full object-cover"
               />
               <figcaption className="flex items-center justify-between px-3.5 py-2.5 text-[11px] font-medium">
                 <span className="text-white/80">Product ad</span>
-                <span className="rounded-full border border-sparkos-cyan/30 bg-sparkos-cyan/10 px-2 py-0.5 text-[10px] uppercase tracking-wider text-sparkos-cyan">
-                  Concept
-                </span>
               </figcaption>
             </figure>
 
